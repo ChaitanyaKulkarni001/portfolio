@@ -2,7 +2,7 @@
 title: Face Mask Detection
 description: |
   A machine learning project that utilizes OpenCV to detect whether a person is wearing a face mask. This project demonstrates the application of computer vision and machine learning techniques.
-publishDate: 2024-10-13 00:00:00
+publishDate: 2023-10-13 00:00:00
 tags:
   - Machine Learning
   - Computer Vision

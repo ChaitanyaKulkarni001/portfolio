@@ -2,7 +2,7 @@
 title: Music Controller — A House Party Web App
 description: |
   A web application designed for house parties where multiple users can join a single room, allowing one host to control the music while others can vote to skip tracks. Built with modern web technologies.
-publishDate: 2024-10-13 00:00:00
+publishDate: 2023-10-13 00:00:00
 tags:
   - Web Development
   - Music

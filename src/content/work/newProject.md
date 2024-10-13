@@ -16,8 +16,7 @@ img_alt: Currency Converter Project Image
 
 > "The power of technology is to simplify complex problems, and that's exactly what this app does."
 
-The **Currency Converter** project is a React-based application that allows users to convert between multiple currencies in real-time. With its sleek design and simple interface, it makes currency conversion a breeze for anyone. [Checkout the Code](https://github.com/ChaitanyaKulkarni001/Currency-Converter)
-
+The **Currency Converter** project is a React-based application that allows users to convert between multiple currencies in real-time. With its sleek design and simple interface, it makes currency conversion a breeze for anyone. 
 ### Key Features
 
 - **Real-Time Conversion:** Automatically updates exchange rates using an external API, providing accurate currency conversions.

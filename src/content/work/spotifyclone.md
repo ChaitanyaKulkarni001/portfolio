@@ -1,8 +1,8 @@
 ---
 title: Spotify Clone - Web Player
 description: |
-  A web player clone of Spotify, designed to deliver a seamless music experience for everyone. Enjoy music playback, explore albums, and experience a responsive design that adapts to your devices. Check out the live demo at [Spotify Clone](https://projectspotify.freewebhostmost.com/).
-publishDate: 2024-10-13 00:00:00
+  A web player clone of Spotify, designed to deliver a seamless music experience for everyone. Enjoy music playback, explore albums, and experience a responsive design that adapts to your devices.
+publishDate: 2022-10-13 00:00:00
 tags:
   - Web Development
   - Music Player
