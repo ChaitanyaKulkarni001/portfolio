@@ -2,10 +2,10 @@
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-	achievement: CollectionEntry<'honor'>;
+	project: CollectionEntry<'honor'>;
 }
 
-const { data, slug } = Astro.props.achievement;
+const { data, slug } = Astro.props.project;
 ---
 
 <a class="card" href={`/honor/${slug}`}>
