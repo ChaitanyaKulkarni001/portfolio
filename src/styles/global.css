@@ -1,45 +1,11 @@
 /* Global variables */
 
 /* Resume */
-.resume-button {
-	text-decoration: none; 
+.Middle {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    margin: 2rem auto; /* Centers the button */
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    background: linear-gradient(135deg, #7611a6, #7611a6);
-    color: white;
-    border-radius: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    justify-content: center; /* Centers content horizontally */
 }
 
-.resume-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Icon and text animations */
-.resume-button .resume-icon {
-    transition: transform 0.3s ease;
-}
-
-.resume-button:hover .resume-icon {
-    transform: scale(1.3); /* Icon grows larger */
-}
-
-.resume-button .resume-text {
-    transition: transform 0.3s ease, font-size 0.3s ease;
-}
-
-.resume-button:hover .resume-text {
-    transform: scale(1.1); /* Text also grows */
-}
 
 
 :root {
