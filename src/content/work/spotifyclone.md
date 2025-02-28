@@ -30,9 +30,6 @@ The **Spotify Clone** project is a web-based music player that replicates the lo
 - **CSS:** To style and create the responsive design.
 - **JavaScript:** To handle music playback and dynamic interactions within the player.
 
-### Live Demo
-
-Experience the project firsthand at the live demo: [Spotify Clone](https://projectspotify.freewebhostmost.com/).
 
 ### Conclusion
 
