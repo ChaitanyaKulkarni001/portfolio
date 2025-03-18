@@ -29,7 +29,7 @@ I was awarded for my singing performance with harmonium at **Carnival 2k25** at 
 
 This award at **Carnival 2k25** is a testament to the hard work and dedication I put into perfecting my singing and performance. It has also fueled my passion to continue pursuing music and grow as an artist.
 
-#### Quick Notes
+#### Summary
 
 - Performance with harmonium added unique flavor to the song.
 - Grateful for the recognition and the opportunity to perform at such a prestigious event.

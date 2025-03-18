@@ -30,7 +30,7 @@ Our team achieved **2nd place** at **Ideathon 2k24** held at **Sinhgad College o
 
 This achievement at **Ideathon 2k24** was a result of our collective efforts and creative problem-solving. It reinforces the value of teamwork, leadership, and innovation in building impactful solutions.
 
-#### Quick Notes
+#### Summary
 
 - Built a multilingual video meeting app with unique features.
 - Led the team with effective task distribution and time management.

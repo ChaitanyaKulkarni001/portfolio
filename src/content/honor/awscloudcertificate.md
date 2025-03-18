@@ -31,7 +31,7 @@ I successfully earned the **AWS Certified Cloud Practitioner** certification, wh
 
 Achieving the **AWS Certified Cloud Practitioner** certification is an important milestone in my cloud computing journey. This accomplishment equips me with the knowledge to design and implement scalable, secure, and cost-effective solutions using AWS services.
 
-#### Quick Notes
+#### Summary
 
 - Certified in AWS Cloud concepts and services.
 - Deepened understanding of AWS architecture and best practices.

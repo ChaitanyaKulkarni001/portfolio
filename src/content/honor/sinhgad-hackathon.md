@@ -37,7 +37,7 @@ We achieved **Runner Up** at the **Sinhgad Hackathon 2k24**, where our team demo
 
 This accomplishment serves as a reflection of the hard work, commitment, and collaboration within our team. It highlights how overcoming challenges through synergy can lead to great achievements.
 
-#### Quick Notes
+#### Summary
 
 - Collaborative efforts were key to success.
 - Tackled complex problems with creativity and determination.

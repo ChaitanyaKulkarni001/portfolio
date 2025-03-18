@@ -2,7 +2,7 @@
 title: WhiskerWag - WebApp for Pet Care
 description: |
   The ultimate online platform dedicated to celebrating our beloved pets! From the playful antics of dogs to the graceful movements of cats, every pet has a special place in our hearts. WhiskerWag connects pet owners to share valuable insights and enrich the lives of our furry friends.
-publishDate: 2024-09-20 00:00:00
+publishDate: 2023-10-13 00:00:00
 tags:
   - Django Rest Framework
   - React js

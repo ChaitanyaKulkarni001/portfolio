@@ -35,7 +35,7 @@ I earned the **100 Days Badge** on **LeetCode** by engaging with daily coding ch
 
 The 100 Days Badge on LeetCode is more than just a recognition; it represents my dedication to growth and the application of coding knowledge to real-world scenarios. This journey has been transformative, reinforcing my passion for software development and further honing my problem-solving skills.
 
-#### Quick Notes
+#### Summary
 
 - Consistent daily problem-solving led to significant improvement.
 - Ranked in the top 4.2% on LeetCode in 2024.
