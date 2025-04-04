@@ -2,7 +2,7 @@
 title: Spotify Clone - Web Player
 description: |
   A web player clone of Spotify, designed to deliver a seamless music experience for everyone. Enjoy music playback, explore albums, and experience a responsive design that adapts to your devices.
-publishDate: 2022-10-13 00:00:00
+publishDate: 2022-9-13 00:00:00
 tags:
   - Web Development
   - Music Player

@@ -2,7 +2,7 @@
 title: CareerXpert AI
 description: |
   CareerXpert AI is an AI-powered platform designed to empower individuals in their career journey. It offers real-time interview preparation, mock interviews, AI-driven resume analysis, and interactive tools to help you land your dream job. Developed during a 24-hour hackathon, this project is a true testament to our dedication and innovative spirit.
-publishDate: 2025-03-31 00:00:00
+publishDate: 2023-10-13 00:00:00
 tags:
   - AI
   - Career Development
