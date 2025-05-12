@@ -25,39 +25,7 @@ const honors = (await getCollection('honor'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
 
-	const achievments = [
-    {
-        title: "Runner Up at Sinhgad Hackathon 2k24",
-        img: "/assets/sinhgad-hackathon.jpg",
-        img_alt: "Image for Sinhgad Hackathon",
-        description: "I want to express my sincere gratitude to my remarkable teammates: Ishwari Dole, Shreya Supekar, Chaitanya C Kulkarni, Anuja Korake. Our collaborative journey was marked by challenges that we tackled with creativity and determination. From the initial brainstorming sessions to effective problem-solving, every phase demonstrated our unwavering commitment and innovative spirit. This achievement stands as a testament to our collective hard work and synergy, reflecting the strength of teamwork in overcoming obstacles and reaching our goals.",
-        slug: ""
-    },
-    {
-        title: "100 days badge and top 4.2% leetcoder in 2024",
-        img: "/assets/100daysleetcodepng.png",
-        img_alt: "Image for badge",
-        description: "I consistently engaged with coding challenges on LeetCode, dedicating myself to daily problem-solving over a span of 100 days. This commitment not only sharpened my coding skills but also enhanced my analytical thinking and problem-solving abilities. Earning the 100 Days Badge is a testament to my perseverance and discipline in tackling diverse algorithmic challenges, reinforcing my understanding of data structures and algorithms. This experience has equipped me with valuable skills applicable to real-world programming scenarios and has further fueled my passion for software development.",
-        slug: ""
-    },
-    {
-    title: "Got Awarded for Singing in Carnival 2k25",
-    img: "/assets/carnival2k25.jpg",  // Replace with the actual image path
-    img_alt: "The Certificate and Performance",
-    description: "I was honored with an award for my singing performance with harmonium at Carnival 2k25, held at SKN Sinhgad College. The experience was both humbling and thrilling, and it was a great opportunity to showcase my passion for music. Grateful for the recognition and memories!",
-    slug: "carnival-2k25-singing-runnerup"
-},    
-    {
-        title: "Secured 2nd place at Ideathon 2k24 ",
-        img: "/assets/Ideathon.jpeg",
-        img_alt: "The Certificates",
-        description: "We achieved 2nd place at Ideathon 2k24 held at Sinhgad College of Engineering, Pandharpur! We build a Multillingual personal video meeting web app with many unique features. I led the team and assigned the work such that every one will remain on same page and we can achieve desired output in specified time. ",
-        slug: ""
-    },
 	
-
-
-];
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -183,6 +151,90 @@ const honors = (await getCollection('honor'))
 			</section>
 
 
+			<h1>SKILLS</h1>
+			<!-- Place this where <Skills /> was -->
+<!-- <section class="section section--skills"> -->
+	
+  
+	<div class="skills-marquee">
+	  <div class="skills-marquee__track">
+		<!-- First pass of icons -->
+		<img src="https://skillicons.dev/icons?i=react"   alt="React"       title="React" />
+		<img src="https://skillicons.dev/icons?i=html"    alt="HTML5"       title="HTML5" />
+		<img src="https://skillicons.dev/icons?i=css"     alt="CSS3"        title="CSS3" />
+		<img src="https://skillicons.dev/icons?i=tailwind"alt="Tailwind CSS" title="Tailwind CSS" />
+		<img src="https://skillicons.dev/icons?i=django"  alt="Django"      title="Django" />
+		<img src="https://skillicons.dev/icons?i=python"  alt="Python"      title="Python" />
+		<img src="https://skillicons.dev/icons?i=java"    alt="Java"        title="Java" />
+		<img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript" title="JavaScript" />
+		<img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL"  title="PostgreSQL" />
+		<img src="https://skillicons.dev/icons?i=mysql"   alt="MySQL"       title="MySQL" />
+		<img src="https://skillicons.dev/icons?i=git"     alt="Git"         title="Git" />
+		<img src="https://skillicons.dev/icons?i=github"  alt="GitHub"      title="GitHub" />
+		<img src="https://skillicons.dev/icons?i=aws"     alt="AWS"         title="AWS" />
+		<img src="https://skillicons.dev/icons?i=c"       alt="C"           title="C" />
+		<img src="https://skillicons.dev/icons?i=cpp"     alt="C++"         title="C++" />
+		<img src="https://skillicons.dev/icons?i=vscode" alt="VS Code"     title="VS Code" />
+  
+		<!-- Duplicate for seamless loop -->
+		<img src="https://skillicons.dev/icons?i=react"   alt="React"       title="React" />
+		<img src="https://skillicons.dev/icons?i=html"    alt="HTML5"       title="HTML5" />
+		<img src="https://skillicons.dev/icons?i=css"     alt="CSS3"        title="CSS3" />
+		<img src="https://skillicons.dev/icons?i=tailwind"alt="Tailwind CSS" title="Tailwind CSS" />
+		<img src="https://skillicons.dev/icons?i=django"  alt="Django"      title="Django" />
+		<!-- …and so on (you can repeat as needed) -->
+	  </div>
+	</div>
+  <!-- </section> -->
+  
+  <style>
+	.section--skills {
+	  position: relative;
+	  overflow: hidden;
+	  padding-top: 2rem;
+	  padding-bottom: 2rem;
+	}
+  
+	.skills-marquee {
+	  overflow: hidden;
+	  /* height accommodates icons + a bit of padding */
+	  height: 8rem;
+	  position: relative;
+	}
+  
+	.skills-marquee__track {
+	  display: flex;
+	  align-items: center;
+	  gap: 1.5rem;
+	  /* animate from 0 → -50% */
+	  animation: marquee-left 25s linear infinite;
+	}
+  
+	.skills-marquee__track img {
+	  width: 5rem;
+	  height: 5rem;
+	  object-fit: contain;
+	  filter: grayscale(0.4);
+	  transition: filter 0.2s ease, transform 0.2s ease;
+	}
+  
+	.skills-marquee__track img:hover {
+	  filter: none;
+	  transform: scale(1.15);
+	}
+  
+	@keyframes marquee-left {
+	  0%   { transform: translateX(0); }
+	  100% { transform: translateX(-50%); }
+	}
+  
+	/* Match your existing section-header style */
+	.section--skills .section-header p {
+	  color: var(--gray-300);
+	  font-size: var(--text-md);
+	}
+  </style>
+  
 		</main>
 
 		<ContactCTA />

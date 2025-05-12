@@ -38,7 +38,7 @@ const { Content } = await entry.render();
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
-							<p class="description">{entry.data.description}</p>
+							<p class="description justify-text ">{entry.data.description}</p>
 						</div>
 					</Hero>
 				</div>
@@ -83,11 +83,13 @@ const { Content } = await entry.render();
 	.description {
 		font-size: var(--text-lg);
 		max-width: 54ch;
+		text-align: justify;
 	}
 
 	.content {
 		max-width: 65ch;
 		margin-inline: auto;
+		
 	}
 
 	.content > :global(* + *) {
