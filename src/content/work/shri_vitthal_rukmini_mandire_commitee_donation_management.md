@@ -13,7 +13,7 @@ img_alt: Official Donation Management System Screenshot
 
 ## Official Donation Management System
 
-> “Service to humanity is service to the divine.” – Mahatma Gandhi
+> ‘As we look ahead into the next century, leaders will be those who empower others.’ – Bill Gates
 
 The **Official Donation Management System** was developed to automate and modernize how the Shri Vitthal Rukmini Mandir Committee records and administers temple donations. From precious metals to miscellaneous offerings, every contribution is logged, receipted, and reported—ensuring full accountability and ease of administration.
 
