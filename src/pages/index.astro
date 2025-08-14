@@ -90,6 +90,36 @@ const honors = (await getCollection('honor'))
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
+
+				<!-- EXPERIENCE SECTION -->
+			<section class="section with-background with-cta">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Experience</h3>
+					<p>My latest professional and internship experiences.</p>
+				</header>
+
+				<div class="gallery">
+					<ul class="experience-list">
+						<li class="experience-card">
+  <div class="experience-box">
+    <div class="experience-box__logo">
+      <img src="/assets/rezoomex_logo.jpeg" alt="Rezoomex Logo" class="experience-logo" />
+    </div>
+
+    <div class="experience-box__content">
+      <h4 class="experience-title">Trainee – Developer <span class="experience-company">| Rezoomex (Remote)</span></h4>
+      <p class="experience-date"><strong>Aug 2025 – Present</strong></p>
+      <p class="experience-desc">
+        Working on real-world development tasks during a 1-month trial period, delivering results independently, collaborating remotely via Slack, and participating in client projects including the Rezoomex Startup Weekend (US).
+      </p>
+    </div>
+  </div>
+</li>
+					</ul>
+				</div>
+			</section>
+			<!-- END EXPERIENCE SECTION -->
+
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Projects</h3>
@@ -389,4 +419,96 @@ const honors = (await getCollection('honor'))
 			height: 9.5rem;
 		}
 	}
+
+	/* ADD these styles into your existing <style> block (or stylesheet) */
+
+/* container for the boxed row */
+.experience-box {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;               /* space between logo and text */
+  padding: 1rem;             /* inner spacing of the rectangle */
+  border: 1px solid var(--gray-800);
+  border-radius: 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+  box-shadow: var(--shadow-sm);
+  max-width: 100%;
+}
+
+/* logo area */
+.experience-box__logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  background: var(--gray-999);
+}
+
+/* set "good size" for the logo */
+.experience-logo {
+  width: 96px;               /* adjust as needed */
+  height: 96px;
+  object-fit: contain;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+/* content area grows to take remaining space */
+.experience-box__content {
+  flex: 1 1 auto;
+  min-width: 0;              /* allow text truncation/ellipsis when needed */
+}
+
+/* title / company */
+.experience-title {
+  margin: 0 0 0.25rem 0;
+  font-size: var(--text-lg);
+  line-height: 1.2;
+}
+
+.experience-company {
+  font-weight: 500;
+  color: var(--gray-400);
+  margin-left: 0.5rem;
+}
+
+/* date and description */
+.experience-date {
+  margin: 0 0 0.5rem 0;
+  color: var(--gray-300);
+  font-size: 0.95rem;
+}
+
+.experience-desc {
+  margin: 0;
+  color: var(--gray-300);
+  font-size: 0.98rem;
+}
+
+/* responsive tweaks: larger logo and spacing on wide screens */
+@media (min-width: 50em) {
+  .experience-logo {
+    width: 120px;
+    height: 120px;
+  }
+  .experience-box {
+    gap: 2rem;
+    padding: 1.25rem;
+  }
+}
+
+
+.experience-list {
+  list-style: none; /* removes the bullet dots */
+  margin: 0;
+  padding: 0;
+}
+
+.experience-card {
+  list-style: none; /* ensures no bullet for individual cards */
+}
+
+
 </style>
