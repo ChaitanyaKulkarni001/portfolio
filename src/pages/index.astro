@@ -1,80 +1,77 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Component Imports
-import CallToAction from '../components/CallToAction.astro';
-import Grid from '../components/Grid.astro';
-import Hero from '../components/Hero.astro';
-import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
-import AssignmentPreview from '../components/AssignmentPreview.astro';
-import Assignmentachievements from '../components/Assignmentachievement.astro';
+import CallToAction from "../components/CallToAction.astro";
+import Grid from "../components/Grid.astro";
+import Hero from "../components/Hero.astro";
+import Icon from "../components/Icon.astro";
+import Pill from "../components/Pill.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import AssignmentPreview from "../components/AssignmentPreview.astro";
+import Assignmentachievements from "../components/Assignmentachievement.astro";
 // Page section components
-import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
+import ContactCTA from "../components/ContactCTA.astro";
+import Skills from "../components/Skills.astro";
 
 // Content Fetching: List four most recent work projects
-const projects = (await getCollection('work'))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.slice(0, 4);
-const honors = (await getCollection('honor'))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.slice(0, 4);
+const projects = (await getCollection("work"))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 4);
+const honors = (await getCollection("honor"))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 4);
 
-	
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
 <BaseLayout>
-	<div class="stack gap-20 lg:gap-48">
-		<div class="wrapper stack gap-8 lg:gap-20">
-			<header class="hero">
-				<Hero
-					title="A friendly hello from Chaitanya!"
-					tagline="Crafting Dynamic Web Experiences | Machine Learning Enthusiast"
-					align="start"
-				>
-					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Effective Commnicator</Pill>
-						<Pill><Icon icon="sun" size="1.33em" /> Leadership Capability</Pill>
-						<!-- <a href="">Download resume</a> -->
-					</div>
-					
-				</Hero>
+  <div class="stack gap-20 lg:gap-48">
+    <div class="wrapper stack gap-8 lg:gap-20">
+      <header class="hero">
+        <Hero
+          title="A friendly hello from Chaitanya!"
+          tagline="Crafting Dynamic Web Experiences | Machine Learning Enthusiast"
+          align="start"
+        >
+          <div class="roles">
+            <Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
+            <Pill
+              ><Icon icon="microphone-stage" size="1.33em" /> Effective Commnicator</Pill
+            >
+            <Pill><Icon icon="sun" size="1.33em" /> Leadership Capability</Pill>
+            <!-- <a href="">Download resume</a> -->
+          </div>
+        </Hero>
 
-				<img
-					alt="Chaitanya Kulkarni smiling in a red plaid shirt and tortoise shell glasses"
-					width="480"
-					height="620"
-					src="/assets/portrait.jpg"
-				/>
+        <img
+          alt="Chaitanya Kulkarni smiling in a red plaid shirt and tortoise shell glasses"
+          width="480"
+          height="620"
+          src="/assets/portrait.jpg"
+        />
+      </header>
 
-				
-				
-				
-			</header>
+      <!-- <div class="cta"> -->
+      <div class="Middle">
+        <!-- This is My Main Resume -->
+        <!-- <CallToAction 	target='_blank' href="https://drive.google.com/file/d/1q_p_btShdFgYeKnhRwAn-f0wuWb3REeh/view?usp=sharing"> -->
+        <!-- This one is for PTC -->
+        <CallToAction
+          target="_blank"
+          href="https://drive.google.com/file/d/1XqkiR53_cf2BkY6kkJ4D54VXLoGkRdNU/view?usp=sharing"
+        >
+          Resume
+          <Icon icon="arrow-right" size="1.2em" />
+        </CallToAction>
+      </div>
+      <!-- </div> -->
 
-		
-
-				<!-- <div class="cta"> -->
-						<div class="Middle" >
-								<!-- This is My Main Resume -->
-							<!-- <CallToAction 	target='_blank' href="https://drive.google.com/file/d/1q_p_btShdFgYeKnhRwAn-f0wuWb3REeh/view?usp=sharing"> -->
-							 <!-- This one is for PTC -->
-							<CallToAction 	target='_blank' href="https://drive.google.com/file/d/1XqkiR53_cf2BkY6kkJ4D54VXLoGkRdNU/view?usp=sharing">
-								Resume
-								<Icon icon="arrow-right" size="1.2em" />
-							</CallToAction>
-						</div>
-				<!-- </div> -->
-			
-			<!-- <a class="resume-button" href="https://drive.google.com/file/d/1ayiXyIENrc2TRcfRV-VpO-iIlzPz4jtd/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+      <!-- <a class="resume-button" href="https://drive.google.com/file/d/1ayiXyIENrc2TRcfRV-VpO-iIlzPz4jtd/view?usp=sharing" target="_blank" rel="noopener noreferrer">
 				<Pill class="pill">
 					<span  class="resume-icon">
 
@@ -83,432 +80,543 @@ const honors = (await getCollection('honor'))
 					<span class="resume-text"> Resume</span>
 				</Pill>
 			</a> -->
-			
-			
-			
-			<Skills />
-		</div>
 
-		<main class="wrapper stack gap-20 lg:gap-48">
-
-				<!-- EXPERIENCE SECTION -->
-			<section class="section with-background with-cta">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Experience</h3>
-					<p>My latest professional and internship experiences.</p>
-				</header>
-
-				<div class="gallery">
-					<ul class="experience-list">
-						<li class="experience-card">
-  <div class="experience-box">
-    <div class="experience-box__logo">
-      <img src="/assets/rezoomex_logo.jpeg" alt="Rezoomex Logo" class="experience-logo" />
+      <Skills />
     </div>
 
-    <div class="experience-box__content">
-      <h4 class="experience-title">Trainee – Developer <span class="experience-company">| Rezoomex (Remote)</span></h4>
-      <p class="experience-date"><strong>Aug 2025 – Present</strong></p>
-      <p class="experience-desc">
-        Working on real-world development tasks during a 1-month trial period, delivering results independently, collaborating remotely via Slack, and participating in client projects including the Rezoomex Startup Weekend (US).
-      </p>
-    </div>
-  </div>
-</li>
-					</ul>
-				</div>
-			</section>
-			<!-- END EXPERIENCE SECTION -->
+    <main class="wrapper stack gap-20 lg:gap-48">
+      <!-- EXPERIENCE SECTION -->
+      <section class="section with-background with-cta">
+        <header class="section-header stack gap-2 lg:gap-4">
+          <h3>Experience</h3>
+          <p>My latest professional and internship experiences.</p>
+        </header>
 
-			<section class="section with-background with-cta">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Projects</h3>
-					<p>Take a look below at some of my featured projects.</p>
-				</header>
+        <div class="gallery">
+          <ul class="experience-list">
+            <li class="experience-card">
+              <div class="experience-box">
+                <div class="experience-box__logo">
+                  <img
+                    src="https://media.licdn.com/dms/image/v2/D4D0BAQF3v7XuSkbFjA/company-logo_100_100/B4DZvj94qIGcAQ-/0/1769056210178/dataphi_ai_logo?e=1773273600&v=beta&t=4OSIedZFjOzhijdbCOwXmLj7YKJW1MpSX013s0MqrpY"
+                    alt="DataPhi Logo"
+                    class="experience-logo"
+                  />
+                </div>
 
-				<div class="gallery">
-					<Grid variant="offset">
-						{
-							projects.map((project) => (
-								<li>
-									<PortfolioPreview project={project} />
-								</li>
-							))
-						}
-					</Grid>
-				</div>
+                <div class="experience-box__content">
+                  <h4 class="experience-title">
+                    Data Analyst <span class="experience-company"
+                      >| DataPhi- AI</span>
+                  </h4>
+                  <p class="experience-date">
+                    <strong>Sept 2025 – Present</strong>
+                  </p>
+                  <p class="experience-desc"></p>
+                </div>
+              </div>
+            </li>
+            <li class="experience-card">
+              <div class="experience-box">
+                <div class="experience-box__logo">
+                  <img
+                    src="/assets/rezoomex_logo.jpeg"
+                    alt="Rezoomex Logo"
+                    class="experience-logo"
+                  />
+                </div>
 
-				<div class="cta">
-					<CallToAction href="/work/">
-						View All
-						<Icon icon="arrow-right" size="1.2em" />
-					</CallToAction>
-				</div>
-			</section>
+                <div class="experience-box__content">
+                  <h4 class="experience-title">
+                    Trainee – Developer <span class="experience-company"
+                      >| Rezoomex (Remote)</span>
+                  </h4>
+                  <p class="experience-date">
+                    <strong>Aug 2025 – Sept 2025</strong>
+                  </p>
+                  <p class="experience-desc"></p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- END EXPERIENCE SECTION -->
 
-		<main class="wrapper stack gap-20 lg:gap-48">
-			<section class="section with-background with-cta">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Achievements & Certificates</h3>
-					<p>Take a look below at some of my featured achievements.</p>
-				</header>
+      <section class="section with-background with-cta">
+        <header class="section-header stack gap-2 lg:gap-4">
+          <h3>Projects</h3>
+          <p>Take a look below at some of my featured projects.</p>
+        </header>
 
-				<div class="gallery">
-					<Grid variant="offset">
-						{
-							honors.map((achievement) => (
-								<li>
-									<AssignmentPreview achievement={achievement} />
-									{/* <Assignmentachievements 
+        <div class="gallery">
+          <Grid variant="offset">
+            {
+              projects.map((project) => (
+                <li>
+                  <PortfolioPreview project={project} />
+                </li>
+              ))
+            }
+          </Grid>
+        </div>
+
+        <div class="cta">
+          <CallToAction href="/work/">
+            View All
+            <Icon icon="arrow-right" size="1.2em" />
+          </CallToAction>
+        </div>
+      </section>
+
+      <main class="wrapper stack gap-20 lg:gap-48">
+        <section class="section with-background with-cta">
+          <header class="section-header stack gap-2 lg:gap-4">
+            <h3>Achievements & Certificates</h3>
+            <p>Take a look below at some of my featured achievements.</p>
+          </header>
+
+          <div class="gallery">
+            <Grid variant="offset">
+              {
+                honors.map((achievement) => (
+                  <li>
+                    <AssignmentPreview achievement={achievement} />
+                    {/* <Assignmentachievements 
                 title={achievement.title} 
                 img={achievement.img} 
                 img_alt={achievement.img_alt} 
                 description={achievement.description} 
                 slug={achievement.slug} 
             /> */}
-								</li>
-							))
-						}
-					</Grid>
-				</div>
+                  </li>
+                ))
+              }
+            </Grid>
+          </div>
 
-				<div class="cta">
-					<CallToAction href="/honor/">
-						View All
-						<Icon icon="arrow-right" size="1.2em" />
-					</CallToAction>
-				</div>
-			</section>
+          <div class="cta">
+            <CallToAction href="/honor/">
+              View All
+              <Icon icon="arrow-right" size="1.2em" />
+            </CallToAction>
+          </div>
+        </section>
 
+        <h1>Skills</h1>
+        <!-- Place this where <Skills /> was -->
+        <!-- <section class="section section--skills"> -->
 
-			<h1>Skills</h1>
-			<!-- Place this where <Skills /> was -->
-<!-- <section class="section section--skills"> -->
-	
-  
-	<div class="skills-marquee">
-	  <div class="skills-marquee__track">
-		<!-- First pass of icons -->
-		<img src="https://skillicons.dev/icons?i=react"   alt="React"       title="React" />
-		<img src="https://skillicons.dev/icons?i=html"    alt="HTML5"       title="HTML5" />
-		<img src="https://skillicons.dev/icons?i=css"     alt="CSS3"        title="CSS3" />
-		<img src="https://skillicons.dev/icons?i=tailwind"alt="Tailwind CSS" title="Tailwind CSS" />
-		<img src="https://skillicons.dev/icons?i=django"  alt="Django"      title="Django" />
-		<img src="https://skillicons.dev/icons?i=python"  alt="Python"      title="Python" />
-		<img src="https://skillicons.dev/icons?i=java"    alt="Java"        title="Java" />
-		<img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript" title="JavaScript" />
-		<img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL"  title="PostgreSQL" />
-		<img src="https://skillicons.dev/icons?i=mysql"   alt="MySQL"       title="MySQL" />
-		<img src="https://skillicons.dev/icons?i=git"     alt="Git"         title="Git" />
-		<img src="https://skillicons.dev/icons?i=github"  alt="GitHub"      title="GitHub" />
-		<img src="https://skillicons.dev/icons?i=aws"     alt="AWS"         title="AWS" />
-		<img src="https://skillicons.dev/icons?i=c"       alt="C"           title="C" />
-		<img src="https://skillicons.dev/icons?i=cpp"     alt="C++"         title="C++" />
-		<img src="https://skillicons.dev/icons?i=vscode" alt="VS Code"     title="VS Code" />
-  
-		<!-- Duplicate for seamless loop -->
-		<img src="https://skillicons.dev/icons?i=react"   alt="React"       title="React" />
-		<img src="https://skillicons.dev/icons?i=html"    alt="HTML5"       title="HTML5" />
-		<img src="https://skillicons.dev/icons?i=css"     alt="CSS3"        title="CSS3" />
-		<img src="https://skillicons.dev/icons?i=tailwind"alt="Tailwind CSS" title="Tailwind CSS" />
-		<img src="https://skillicons.dev/icons?i=django"  alt="Django"      title="Django" />
-		<!-- …and so on (you can repeat as needed) -->
-	  </div>
-	</div>
-  <!-- </section> -->
-  
+        <div class="skills-marquee">
+          <div class="skills-marquee__track">
+            <!-- First pass of icons -->
+            <img
+              src="https://skillicons.dev/icons?i=react"
+              alt="React"
+              title="React"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=html"
+              alt="HTML5"
+              title="HTML5"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=css"
+              alt="CSS3"
+              title="CSS3"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=tailwind"
+              alt="Tailwind CSS"
+              title="Tailwind CSS"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=django"
+              alt="Django"
+              title="Django"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=python"
+              alt="Python"
+              title="Python"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=java"
+              alt="Java"
+              title="Java"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=javascript"
+              alt="JavaScript"
+              title="JavaScript"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=postgres"
+              alt="PostgreSQL"
+              title="PostgreSQL"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=mysql"
+              alt="MySQL"
+              title="MySQL"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=git"
+              alt="Git"
+              title="Git"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=github"
+              alt="GitHub"
+              title="GitHub"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=aws"
+              alt="AWS"
+              title="AWS"
+            />
+            <img src="https://skillicons.dev/icons?i=c" alt="C" title="C" />
+            <img
+              src="https://skillicons.dev/icons?i=cpp"
+              alt="C++"
+              title="C++"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=vscode"
+              alt="VS Code"
+              title="VS Code"
+            />
+
+            <!-- Duplicate for seamless loop -->
+            <img
+              src="https://skillicons.dev/icons?i=react"
+              alt="React"
+              title="React"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=html"
+              alt="HTML5"
+              title="HTML5"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=css"
+              alt="CSS3"
+              title="CSS3"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=tailwind"
+              alt="Tailwind CSS"
+              title="Tailwind CSS"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=django"
+              alt="Django"
+              title="Django"
+            />
+            <!-- …and so on (you can repeat as needed) -->
+          </div>
+        </div>
+        <!-- </section> -->
+
+        <style>
+          .section--skills {
+            position: relative;
+            overflow: hidden;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+          }
+
+          .skills-marquee {
+            overflow: hidden;
+            /* height accommodates icons + a bit of padding */
+            height: 8rem;
+            position: relative;
+          }
+
+          .skills-marquee__track {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            /* animate from 0 → -50% */
+            animation: marquee-left 25s linear infinite;
+          }
+
+          .skills-marquee__track img {
+            width: 5rem;
+            height: 5rem;
+            object-fit: contain;
+            filter: grayscale(0.4);
+            transition:
+              filter 0.2s ease,
+              transform 0.2s ease;
+          }
+
+          .skills-marquee__track img:hover {
+            filter: none;
+            transform: scale(1.15);
+          }
+
+          @keyframes marquee-left {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+
+          /* Match your existing section-header style */
+          .section--skills .section-header p {
+            color: var(--gray-300);
+            font-size: var(--text-md);
+          }
+        </style>
+      </main>
+
+      <ContactCTA />
+    </main>
+  </div>
+
   <style>
-	.section--skills {
-	  position: relative;
-	  overflow: hidden;
-	  padding-top: 2rem;
-	  padding-bottom: 2rem;
-	}
-  
-	.skills-marquee {
-	  overflow: hidden;
-	  /* height accommodates icons + a bit of padding */
-	  height: 8rem;
-	  position: relative;
-	}
-  
-	.skills-marquee__track {
-	  display: flex;
-	  align-items: center;
-	  gap: 1.5rem;
-	  /* animate from 0 → -50% */
-	  animation: marquee-left 25s linear infinite;
-	}
-  
-	.skills-marquee__track img {
-	  width: 5rem;
-	  height: 5rem;
-	  object-fit: contain;
-	  filter: grayscale(0.4);
-	  transition: filter 0.2s ease, transform 0.2s ease;
-	}
-  
-	.skills-marquee__track img:hover {
-	  filter: none;
-	  transform: scale(1.15);
-	}
-  
-	@keyframes marquee-left {
-	  0%   { transform: translateX(0); }
-	  100% { transform: translateX(-50%); }
-	}
-  
-	/* Match your existing section-header style */
-	.section--skills .section-header p {
-	  color: var(--gray-300);
-	  font-size: var(--text-md);
-	}
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .roles {
+      display: none;
+    }
+
+    .hero img {
+      aspect-ratio: 5 / 4;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (min-width: 50em) {
+      .hero {
+        display: grid;
+        grid-template-columns: 6fr 4fr;
+        padding-inline: 2.5rem;
+        gap: 3.75rem;
+      }
+
+      .roles {
+        margin-top: 0.5rem;
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .hero img {
+        aspect-ratio: 3 / 4;
+        border-radius: 4.5rem;
+        object-fit: cover;
+      }
+    }
+
+    /* ====================================================== */
+
+    .section {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .with-background {
+      position: relative;
+    }
+
+    .with-background::before {
+      --hero-bg: var(--bg-image-subtle-2);
+
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      left: 50%;
+      width: 100vw;
+      aspect-ratio: calc(2.25 / var(--bg-scale));
+      top: 0;
+      transform: translateY(-75%) translateX(-50%);
+      background:
+        url("/assets/backgrounds/noise.png") top center/220px repeat,
+        var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+        var(--gray-999);
+      background-blend-mode: overlay, normal, normal, normal;
+      mix-blend-mode: var(--bg-blend-mode);
+      z-index: -1;
+    }
+
+    .with-background.bg-variant::before {
+      --hero-bg: var(--bg-image-subtle-1);
+    }
+
+    .section-header {
+      justify-self: center;
+      text-align: center;
+      max-width: 50ch;
+      font-size: var(--text-md);
+      color: var(--gray-300);
+    }
+
+    .section-header h3 {
+      font-size: var(--text-2xl);
+    }
+
+    @media (min-width: 50em) {
+      .section {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "header header header header" "gallery gallery gallery gallery";
+        gap: 5rem;
+      }
+
+      .section.with-cta {
+        grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
+      }
+
+      .section-header {
+        grid-area: header;
+        font-size: var(--text-lg);
+      }
+
+      .section-header h3 {
+        font-size: var(--text-4xl);
+      }
+
+      .with-cta .section-header {
+        justify-self: flex-start;
+        text-align: left;
+      }
+
+      .gallery {
+        grid-area: gallery;
+      }
+
+      .cta {
+        grid-area: cta;
+      }
+    }
+
+    /* ====================================================== */
+
+    .mention-card {
+      display: flex;
+      height: 7rem;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 1px solid var(--gray-800);
+      border-radius: 1.5rem;
+      color: var(--gray-300);
+      background: var(--gradient-subtle);
+      box-shadow: var(--shadow-sm);
+    }
+    .achievement img {
+      width: 800px; /* Adjust size as needed */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+    @media (min-width: 50em) {
+      .mention-card {
+        border-radius: 1.5rem;
+        height: 9.5rem;
+      }
+    }
+
+    /* ADD these styles into your existing <style> block (or stylesheet) */
+
+    /* container for the boxed row */
+    .experience-box {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem; /* space between logo and text */
+      padding: 1rem; /* inner spacing of the rectangle */
+      border: 1px solid var(--gray-800);
+      border-radius: 1rem;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.01),
+        rgba(0, 0, 0, 0.02)
+      );
+      box-shadow: var(--shadow-sm);
+      max-width: 100%;
+    }
+
+    /* logo area */
+    .experience-box__logo {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem;
+      border-radius: 0.75rem;
+      background: var(--gray-999);
+    }
+
+    /* set "good size" for the logo */
+    .experience-logo {
+      width: 96px; /* adjust as needed */
+      height: 96px;
+      object-fit: contain;
+      display: block;
+      border-radius: 0.5rem;
+    }
+
+    /* content area grows to take remaining space */
+    .experience-box__content {
+      flex: 1 1 auto;
+      min-width: 0; /* allow text truncation/ellipsis when needed */
+    }
+
+    /* title / company */
+    .experience-title {
+      margin: 0 0 0.25rem 0;
+      font-size: var(--text-lg);
+      line-height: 1.2;
+    }
+
+    .experience-company {
+      font-weight: 500;
+      color: var(--gray-400);
+      margin-left: 0.5rem;
+    }
+
+    /* date and description */
+    .experience-date {
+      margin: 0 0 0.5rem 0;
+      color: var(--gray-300);
+      font-size: 0.95rem;
+    }
+
+    .experience-desc {
+      margin: 0;
+      color: var(--gray-300);
+      font-size: 0.98rem;
+    }
+
+    /* responsive tweaks: larger logo and spacing on wide screens */
+    @media (min-width: 50em) {
+      .experience-logo {
+        width: 120px;
+        height: 120px;
+      }
+      .experience-box {
+        gap: 2rem;
+        padding: 1.25rem;
+      }
+    }
+
+    .experience-list {
+      list-style: none; /* removes the bullet dots */
+      margin: 0;
+      padding: 0;
+    }
+
+    .experience-card {
+      list-style: none; /* ensures no bullet for individual cards */
+    }
   </style>
-  
-		</main>
-
-		<ContactCTA />
-	</div>
 </BaseLayout>
-
-<style>
-	.hero {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-	}
-
-	.roles {
-		display: none;
-	}
-
-	.hero img {
-		aspect-ratio: 5 / 4;
-		object-fit: cover;
-		object-position: top;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
-
-	@media (min-width: 50em) {
-		.hero {
-			display: grid;
-			grid-template-columns: 6fr 4fr;
-			padding-inline: 2.5rem;
-			gap: 3.75rem;
-		}
-
-		.roles {
-			margin-top: 0.5rem;
-			display: flex;
-			gap: 0.5rem;
-		}
-
-		.hero img {
-			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
-			object-fit: cover;
-		}
-	}
-
-	/* ====================================================== */
-
-	.section {
-		display: grid;
-		gap: 2rem;
-	}
-
-	.with-background {
-		position: relative;
-	}
-
-	.with-background::before {
-		--hero-bg: var(--bg-image-subtle-2);
-
-		content: '';
-		position: absolute;
-		pointer-events: none;
-		left: 50%;
-		width: 100vw;
-		aspect-ratio: calc(2.25 / var(--bg-scale));
-		top: 0;
-		transform: translateY(-75%) translateX(-50%);
-		background:
-			url('/assets/backgrounds/noise.png') top center/220px repeat,
-			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
-			var(--gray-999);
-		background-blend-mode: overlay, normal, normal, normal;
-		mix-blend-mode: var(--bg-blend-mode);
-		z-index: -1;
-	}
-
-	.with-background.bg-variant::before {
-		--hero-bg: var(--bg-image-subtle-1);
-	}
-
-	.section-header {
-		justify-self: center;
-		text-align: center;
-		max-width: 50ch;
-		font-size: var(--text-md);
-		color: var(--gray-300);
-	}
-
-	.section-header h3 {
-		font-size: var(--text-2xl);
-	}
-
-	@media (min-width: 50em) {
-		.section {
-			grid-template-columns: repeat(4, 1fr);
-			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
-			gap: 5rem;
-		}
-
-		.section.with-cta {
-			grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
-		}
-
-		.section-header {
-			grid-area: header;
-			font-size: var(--text-lg);
-		}
-
-		.section-header h3 {
-			font-size: var(--text-4xl);
-		}
-
-		.with-cta .section-header {
-			justify-self: flex-start;
-			text-align: left;
-		}
-
-		.gallery {
-			grid-area: gallery;
-		}
-
-		.cta {
-			grid-area: cta;
-		}
-	}
-
-	/* ====================================================== */
-
-	.mention-card {
-		display: flex;
-		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
-	}
-.achievement img {
-		width: 800px; /* Adjust size as needed */
-		height: auto; /* Maintain aspect ratio */
-		border-radius: 1rem;
-		box-shadow: var(--shadow-sm);
-	}
-	@media (min-width: 50em) {
-		.mention-card {
-			border-radius: 1.5rem;
-			height: 9.5rem;
-		}
-	}
-
-	/* ADD these styles into your existing <style> block (or stylesheet) */
-
-/* container for the boxed row */
-.experience-box {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;               /* space between logo and text */
-  padding: 1rem;             /* inner spacing of the rectangle */
-  border: 1px solid var(--gray-800);
-  border-radius: 1rem;
-  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
-  box-shadow: var(--shadow-sm);
-  max-width: 100%;
-}
-
-/* logo area */
-.experience-box__logo {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25rem;
-  border-radius: 0.75rem;
-  background: var(--gray-999);
-}
-
-/* set "good size" for the logo */
-.experience-logo {
-  width: 96px;               /* adjust as needed */
-  height: 96px;
-  object-fit: contain;
-  display: block;
-  border-radius: 0.5rem;
-}
-
-/* content area grows to take remaining space */
-.experience-box__content {
-  flex: 1 1 auto;
-  min-width: 0;              /* allow text truncation/ellipsis when needed */
-}
-
-/* title / company */
-.experience-title {
-  margin: 0 0 0.25rem 0;
-  font-size: var(--text-lg);
-  line-height: 1.2;
-}
-
-.experience-company {
-  font-weight: 500;
-  color: var(--gray-400);
-  margin-left: 0.5rem;
-}
-
-/* date and description */
-.experience-date {
-  margin: 0 0 0.5rem 0;
-  color: var(--gray-300);
-  font-size: 0.95rem;
-}
-
-.experience-desc {
-  margin: 0;
-  color: var(--gray-300);
-  font-size: 0.98rem;
-}
-
-/* responsive tweaks: larger logo and spacing on wide screens */
-@media (min-width: 50em) {
-  .experience-logo {
-    width: 120px;
-    height: 120px;
-  }
-  .experience-box {
-    gap: 2rem;
-    padding: 1.25rem;
-  }
-}
-
-
-.experience-list {
-  list-style: none; /* removes the bullet dots */
-  margin: 0;
-  padding: 0;
-}
-
-.experience-card {
-  list-style: none; /* ensures no bullet for individual cards */
-}
-
-
-</style>
