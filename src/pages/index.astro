@@ -94,7 +94,7 @@ const honors = (await getCollection("honor"))
 
         <div class="gallery">
           <ul class="experience-list">
-            <li class="experience-card">
+            <li class="experience-card" data-experience="dataphi">
               <div class="experience-box">
                 <div class="experience-box__logo">
                   <img
@@ -112,11 +112,11 @@ const honors = (await getCollection("honor"))
                   <p class="experience-date">
                     <strong>Sept 2025 – Present</strong>
                   </p>
-                  <p class="experience-desc"></p>
+                  <p class="experience-desc">Click for details</p>
                 </div>
               </div>
             </li>
-            <li class="experience-card">
+            <li class="experience-card" data-experience="rezoomex">
               <div class="experience-box">
                 <div class="experience-box__logo">
                   <img
@@ -134,12 +134,108 @@ const honors = (await getCollection("honor"))
                   <p class="experience-date">
                     <strong>Aug 2025 – Sept 2025</strong>
                   </p>
-                  <p class="experience-desc"></p>
+                  <p class="experience-desc">Click for details</p>
                 </div>
               </div>
             </li>
           </ul>
         </div>
+
+        <!-- Experience Modal -->
+        <div id="experienceModal" class="experience-modal">
+          <div class="experience-modal__content">
+            <button class="experience-modal__close" id="closeModalBtn">✕</button>
+            
+            <div class="experience-modal__header">
+              <img id="modalLogo" src="" alt="" class="experience-modal__logo" />
+              <h2 id="modalTitle"></h2>
+            </div>
+            
+            <div class="experience-modal__body">
+              <p id="modalDate" class="experience-modal__date"></p>
+              <div id="modalDescription" class="experience-modal__description"></div>
+            </div>
+          </div>
+        </div>
+
+        <script define:vars={{}} type="module">
+          const experienceData = {
+            dataphi: {
+              title: "Data Analyst at DataPhi- AI",
+              date: "Sept 2025 – Present",
+              logo: "https://media.licdn.com/dms/image/v2/D4D0BAQF3v7XuSkbFjA/company-logo_100_100/B4DZvj94qIGcAQ-/0/1769056210178/dataphi_ai_logo?e=1773273600&v=beta&t=4OSIedZFjOzhijdbCOwXmLj7YKJW1MpSX013s0MqrpY",
+              description: "Currently working on agentic AI and machine learning in the PhiAI vertical. Developing intelligent systems that leverage advanced AI techniques to solve complex problems."
+            },
+            rezoomex: {
+              title: "Trainee – Developer at Rezoomex (Remote)",
+              date: "Aug 2025 – Sept 2025",
+              logo: "/assets/rezoomex_logo.jpeg",
+              description: "Worked on real-world projects, delivering production-ready code and features. Won the Boston Rezoomex Smart Contract Competition, demonstrating expertise in blockchain and smart contract development."
+            }
+          };
+
+          function openExperienceModal(experienceKey) {
+            const data = experienceData[experienceKey];
+            
+            if (!data) return;
+
+            const modal = document.getElementById('experienceModal');
+            const modalLogo = document.getElementById('modalLogo');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDate = document.getElementById('modalDate');
+            const modalDescription = document.getElementById('modalDescription');
+
+            modalLogo.src = data.logo;
+            modalLogo.alt = data.title;
+            modalTitle.textContent = data.title;
+            modalDate.textContent = data.date;
+            modalDescription.textContent = data.description;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+          }
+
+          function closeExperienceModal() {
+            const modal = document.getElementById('experienceModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+          }
+
+          // Event listeners
+          const experienceBoxes = document.querySelectorAll('.experience-box');
+          experienceBoxes.forEach(box => {
+            box.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const card = box.closest('[data-experience]');
+              const experienceKey = card.getAttribute('data-experience');
+              openExperienceModal(experienceKey);
+            });
+          });
+
+          // Close button
+          const closeBtn = document.getElementById('closeModalBtn');
+          if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              closeExperienceModal();
+            });
+          }
+
+          // Close on modal backdrop click
+          const modal = document.getElementById('experienceModal');
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              closeExperienceModal();
+            }
+          });
+
+          // Close on Escape key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+              closeExperienceModal();
+            }
+          });
+        </script>
       </section>
       <!-- END EXPERIENCE SECTION -->
 

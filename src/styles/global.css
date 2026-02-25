@@ -352,3 +352,140 @@ h5 {
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 2rem;
 }
+
+/* Experience Modal Styling */
+.experience-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(9, 11, 17, 0.8);
+	z-index: 1000;
+	align-items: center;
+	justify-content: center;
+	backdrop-filter: blur(4px);
+	animation: fadeIn 0.3s ease-in-out;
+}
+
+.experience-modal.active {
+	display: flex;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		transform: translateY(30px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.experience-modal__content {
+	position: relative;
+	background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+	border: 1px solid var(--gray-700);
+	border-radius: 1rem;
+	max-width: 600px;
+	width: 90%;
+	max-height: 80vh;
+	overflow-y: auto;
+	padding: 3rem 2rem;
+	box-shadow: var(--shadow-lg);
+	animation: slideUp 0.3s ease-out;
+}
+
+.experience-modal__close {
+	position: absolute;
+	top: 1.5rem;
+	right: 1.5rem;
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	color: var(--gray-400);
+	cursor: pointer;
+	padding: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: color var(--theme-transition);
+}
+
+.experience-modal__close:hover {
+	color: var(--accent-regular);
+}
+
+.experience-modal__header {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid var(--gray-700);
+}
+
+.experience-modal__logo {
+	width: 100px;
+	height: 100px;
+	object-fit: contain;
+	flex-shrink: 0;
+}
+
+.experience-modal__header h2 {
+	font-size: var(--text-2xl);
+	margin: 0;
+	color: var(--gray-100);
+}
+
+.experience-modal__date {
+	color: var(--accent-regular);
+	font-size: var(--text-md);
+	margin: 0 0 1.5rem 0;
+	font-weight: 600;
+}
+
+.experience-modal__body {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.experience-modal__description {
+	color: var(--gray-300);
+	font-size: var(--text-base);
+	line-height: 1.7;
+	margin: 0;
+}
+
+/* Make experience cards clickable */
+.experience-box {
+	cursor: pointer;
+}
+
+@media (max-width: 640px) {
+	.experience-modal__content {
+		width: 95%;
+		padding: 2rem 1.5rem;
+	}
+
+	.experience-modal__header {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.experience-modal__header h2 {
+		font-size: var(--text-xl);
+	}
+}
